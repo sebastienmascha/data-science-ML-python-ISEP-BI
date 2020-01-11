@@ -1,0 +1,201 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "DatafinitiElectronicsProductData",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "pie",
+      "variant": "normal",
+      "name": "Total number of products sold by brand",
+      "userEditedName": true,
+      "genericDimension0": [
+        {
+          "column": "brand",
+          "type": "ALPHANUM",
+          "numParams": {
+            "emptyBinsMode": "ZEROS"
+          },
+          "maxValues": 20,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "AGGREGATION",
+            "measureIdx": 0,
+            "label": "Count of records, descending"
+          }
+        }
+      ],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [
+        {
+          "function": "COUNT",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [],
+      "uaYDimension": [],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [],
+      "uaTooltip": [],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [
+        {
+          "filterType": "ALPHANUM_FACET",
+          "column": "reviews.doRecommend",
+          "columnType": "ALPHANUM",
+          "isA": "filter",
+          "excludedValues": {},
+          "explicitExclude": false
+        }
+      ],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": true,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "default",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "computeMode": "NORMAL",
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAADuklEQVRoQ+3WX0hTURwH8HOd809bav5HZyoNFVqJEWoihBk0m4EEilZS9FAvRhFIvoj0B/yD5INaRgop9KAhBIUVmitbDq38kyDWKJvTMs0yabo5rzfO1aPb3Zwb3uMuuvO0e3Z3z/nse37nHgJss0ZsMy9wgrd64s6EcSasUt2WDxt2kLnjCbxiURC4XtezMhwFwOhIaXouzvHhszclYaVSKdfOnQKikPMzPJ7AK1mTApjgVSixqC6VpeKCYwcXFRXJpVIpIMmBCd18cWB42CVgHbxEVZemp+BAYwXPtXyUl3Q1A7FYrBWLxQKYsq1gXGhsYM21Drn/YR8wrdfO1fQ994Qp2wvGgcYChlh6g+AB0i/ZhwdTFolEkxKJJGBOd3Yhh2p0XbuGTRcyRRA/R0pk2Wwtb9bB8qZqIX+GehI4FqH1nPUSwJRhg2iUsl/Ilflel0w3413aGojNemYdXJ4pkyceS1ueP0GFq/YRED04pZl+NTFExcZV7YJ1/IbKNnktrZcgW2gsYDR5BA9X7QcQjVL291duDXDn40G6dn+p+3SfFQ894GcmuqLvqSE+8T5/WKTQ36rrdV8vWfQ9JxNGYDRJ7Z/v2v6WCgGCw6S7w75MBcT+cD9NHndzeTbqZiuYrR2b1SVddbGdThg2oa+bISrBlw8/kwadoaupkA/Thuj6nR2GyiQZ3+PFmD1eVg4jrIInK+peNg5FulhSHEgLprvfNxfqc+LyddMnOr2P1kbZDM5P2UvlSSOP2PyDNW5kFUzV3FlJmDmefpFYqO2PdoX9EP/hU8tM+e8YL+P7KjIOWvWcPBS84eMmNvDs+IR6pOnRbookzcaYSN3zLS9eHXEjus2uwDgHHoyOWTPhf5G+4z13M+h1XfW6AQwES7VJN/mC/PLLNqM5D9YFCsnuhiyesYjGhqYDoKgGSW159Fe2ojkJ1gcJDV31WfTuzISiaybYVjTnwDXDZRaXNEzVBAsvFNV0F0p5PTQbWDgGq5sWfCATbYztDZVRroBYGtMC+NzVM9qAED/6oMJsnAcbQ83SVb/7CzTd3syEraXMWfC9r2UXKjsacpgJ0XWL2nK6lsCW0GxhsSxp+FDJA4lZLdsDZqI5D2aiTbBG9btWwmghwNcVm1hsCaMJw6TNsAywNbTybfGGj5LM0mJ9l2YMQFCtBe0mfUb1i/qNX02oDwcWe8Jo8lRrwWpN2wDGhd00sAncChgnFM0B95I2O0A4usMJdnQCuMd3Joz7H3b0850JOzoB3OP/BwgFkTjP1Ej/AAAAAElFTkSuQmCC",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Total number of products sold by brand on DatafinitiElectronicsProductData",
+  "dashboardCreationId": "hOnAD7i",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1578250813326
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1578250813326
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
